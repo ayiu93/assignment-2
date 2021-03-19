@@ -5,12 +5,18 @@
 
 .container {
     display: grid;
+    grid-template-columns: 1/5fr 1fr;
     grid-template-rows: 2rem 1fr 2rem;
+    grid-template-areas: 
+    'h h h' 
+    's m m'
+    'f f f';
     width: 100vw;
     height: 100vh;
 }
 
 header {
+    grid-area: h;
     display: flex;
     background-color: #2a273f;
     color: #e0def4;
@@ -24,11 +30,39 @@ a {
     padding-right: 2em;
 }
 
-.main {
+.side {
+    grid-area: s;
     background-color: #393552;
 }
 
+.main {
+    grid-area: m;
+    background-color: #393552;
+}
+
+.button {
+    display: flex;
+    border: none;
+    background-color: inherit;
+    color: #e0def4;
+    font-size: 2rem;
+}
+
+.button:after {
+    border: none;
+}
+
+.menu {
+    justify-content: right;
+}
+
+.note {
+    display: flexbox;
+    align-items: stretch;
+}
+
 footer {
+    grid-area: f;
     display: flex;
     background-color: #2a273f;
     color: #e0def4;
