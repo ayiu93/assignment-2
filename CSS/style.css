@@ -48,6 +48,7 @@ navi {
     background-color: #6e6a86;
     display: flex;
     flex-direction: column;
+    opacity: 96%;
 }
 
 ul {
@@ -64,9 +65,13 @@ ul {
 }
 
 textarea {
+    height: 20rem;
+    width: 40rem;
     margin-left: 2rem;
     font-family: 'Zilla Slab', serif;
     font-size: 1.5em;
+    background-color: #f6c177;
+    color: #191724;
 }
 
 .button {
@@ -92,6 +97,7 @@ textarea {
 
 .close {
     margin-left: 15rem;
+    color: #191724;
 }
 
 .add {
@@ -105,4 +111,123 @@ footer {
     color: #e0def4;
     justify-content: center;
     font-family: 'Zilla Slab', serif;
+}
+
+@media screen and (max-width: 720px) {
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .container {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas: 
+        'h h h' 
+        's m m'
+        'f f f';
+        width: 100vw;
+        height: 100vh;
+    }
+    
+    header {
+        grid-area: h;
+        display: flex;
+        background-color: #2a273f;
+        flex-direction: row;
+        justify-content: flex-end;
+        font-size: 6vw;
+        font-family: 'Noto Sans JP', sans-serif;
+    }
+    
+    a {
+        padding-right: 2em;
+        text-decoration: none;
+        color: #e0def4;
+    }
+    
+    .side {
+        grid-area: s;
+        background-color: #393552;
+        display: flex;
+        justify-content: flex-start;
+        
+    }
+    
+    navi {
+        height: 100%;
+        min-width: 10vw;
+        position: fixed; 
+        top: 0; 
+        left: 0;
+        background-color: #6e6a86;
+        display: flex;
+        flex-direction: column;
+        opacity: 96%;
+    }
+    
+    ul {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        font-size: 10vw;
+        font-family: 'Zilla Slab', serif;
+        color: #31748f;
+    }
+    
+    .main {
+        grid-area: m;
+        background-color: #393552;
+    }
+    
+    textarea {
+        height: 45vw;
+        width: 60vw;
+        margin-left: 2rem;
+        font-family: 'Zilla Slab', serif;
+        font-size: 5vw;
+        background-color: #f6c177;
+        color: #191724;
+    }
+    
+    .button {
+        display: flex;
+        border: none;
+        background-color: inherit;
+        color: #e0def4;
+        font-size: 8vw;
+        font-family: 'Zilla Slab', serif;
+    }
+    
+    .menu {
+        margin: 1rem;
+    }
+    
+    .save {
+        font-size: 1rem;
+    }
+    
+    .delete {
+        font-size: 1rem;
+    }
+    
+    .close {
+        margin-left: 58vw;
+        color: #191724;
+    }
+    
+    .add {
+        margin-top: 15%;
+    }
+    
+    footer {
+        grid-area: f;
+        display: flex;
+        background-color: #2a273f;
+        color: #e0def4;
+        justify-content: center;
+        font-family: 'Zilla Slab', serif;
+        font-size: 3vw;
+    }
 }
