@@ -4,19 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Zilla+Slab&display=swap" rel="stylesheet">
     <title>Note-ly</title>
 </head>
 <body>
     <div class="container">
         <header>
-            <a>About</a>
-            <a>Docs</a>
+            <a href="#">About</a>
+            <a href="#">Docs</a>
         </header>
         <div class="side">
-            <button class="button menu" type="menu"><<</button>
+            <navi>
+                <button class="button menu close" type="menu"><<</button>
+                <ul class="list">
+                    <a href="#">my notes</a>
+                    <a href="#">note one</a>
+                    <a href="#">note two</a>
+                </ul>
+            </navi>
         </div>
         <div class="main">
-            <button class="button note" type="button">+ create a new note</button>
+            <button class="button add" type="button">+</button>
+            <textarea class="note"
+            rows="14" cols="50">your note here
+            </textarea>
+            <button class="button save" type="submit">save</button>
+            <button class="button delete"type="submit">delete</button>
         </div>
         <footer>
             <p>made by Anthony Yiu</p>
