@@ -39,7 +39,7 @@ a {
     
 }
 
-navi {
+.noteList {
     height: 100%;
     min-width: 15%;
     position: fixed; 
@@ -61,11 +61,27 @@ ul {
 
 li {
     list-style-type: none;
+
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
 }
 
 .main {
     grid-area: m;
     background-color: #393552;
+}
+
+.workspace {
+    display: grid;
+    grid-template-rows: 2rem auto 2rem;
+    grid-template-areas: 
+    'a' 
+    'n'
+    'b';
+    padding-top: 10%;
 }
 
 textarea {
@@ -76,6 +92,7 @@ textarea {
     font-size: 1.5em;
     background-color: #f6c177;
     color: #191724;
+    grid-area: n;
 }
 
 .button {
@@ -91,8 +108,18 @@ textarea {
     margin: 1rem;
 }
 
+.bar {
+    padding-top: 1rem;
+    grid-area: b;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 58%;
+}
+
 .save {
     font-size: 1rem;
+    padding-right: 1rem;
 }
 
 .delete {
@@ -105,7 +132,7 @@ textarea {
 }
 
 .add {
-    margin-top: 15%;
+    grid-area: a;
 }
 
 footer {
@@ -128,9 +155,9 @@ footer {
         grid-template-columns: auto auto;
         grid-template-rows: auto 1fr auto;
         grid-template-areas: 
-        'h h h' 
-        's m m'
-        'f f f';
+        'h h' 
+        's m'
+        'f f';
         width: 100vw;
         height: 100vh;
     }
@@ -208,6 +235,7 @@ footer {
         margin: 1rem;
     }
     
+
     .save {
         font-size: 1rem;
     }

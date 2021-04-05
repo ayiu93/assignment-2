@@ -12,14 +12,14 @@
     <div class="container">
         <header>
             <nav>
-                <ul>
+                <ul class="top">
                     <li><a href="#">About</a></li>
                     <li><a href="#">Docs</a></li>
                 </ul>
             </nav>
         </header>
         <div class="side">
-            <nav>
+            <nav class="noteList">
                 <button class="button menu close" type="menu"><<</button>
                 <ul class="list">
                     <a href="#">my notes</a>
@@ -29,11 +29,15 @@
             </navi>
         </div>
         <div class="main">
-            <button class="button add" type="button">+</button>
-            <textarea class="note">your note here
-            </textarea>
-            <button class="button save" type="submit">save</button>
-            <button class="button delete"type="submit">delete</button>
+            <div class="workspace">
+                <button class="button add" type="button">+</button>
+                <textarea class="note">your note here
+                </textarea>
+                <div class="bar">
+                    <button class="button save" type="submit">save</button>
+                    <button class="button delete"type="submit">delete</button>
+                </div>
+            </div>
         </div>
         <footer>
             <p>made by Anthony Yiu</p>
