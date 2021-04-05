@@ -59,6 +59,10 @@ ul {
     font-family: 'Zilla Slab', serif;
 }
 
+li {
+    list-style-type: none;
+}
+
 .main {
     grid-area: m;
     background-color: #393552;
