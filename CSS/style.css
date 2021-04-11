@@ -75,17 +75,23 @@ li {
 .main {
     grid-area: m;
     background-color: var(--mainColour);
+    display: grid;
+    grid-template-rows: 0rem auto;
+    grid-template-columns: 0rem auto auto;
+    grid-template-areas:
+    'a . .'
+    '. w .';
 }
 
 .workspace {
+    grid-area: w;
     display: grid;
-    grid-template-rows: 2rem auto 2rem;
-    grid-template-columns: 1rem 42rem auto;
+    grid-template-rows: 20rem 2rem;
+    grid-template-columns: 42rem auto;
     grid-template-areas: 
-    'a . .' 
-    '. n .'
-    '. b .';
-    padding-top: 10%;
+    'n .'
+    'b .';
+    padding-top: 8%;
 }
 
 textarea {
@@ -135,7 +141,8 @@ textarea {
 
 .add {
     grid-area: a;
-    font-size: 3rem;
+    font-size: 4rem;
+    padding-top: 2rem;
 }
 
 footer {
@@ -204,7 +211,7 @@ footer {
     }
 
     .add {
-        font-size: 6rem;
+        font-size: 4rem;
     }
 
     .save {
