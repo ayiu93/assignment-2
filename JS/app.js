@@ -1,13 +1,27 @@
+const body = document.querySelector("body")
+const mode = document.querySelector(".mode")
+const add = document.querySelector(".add")
+const work = document.querySelector(".workspace")
+
+
 function themeChange() {
-	document.body.classList.toggle('darkMode');
-  var buttonText = document.getElementsByClassName("mode");
-  if (buttonText[0].innerHTML === "Light-theme") {
-    buttonText[0].innerHTML = "Dark-theme";
+	body.classList.toggle("darkMode");
+  if (mode.innerHTML === "Light-theme") {
+    mode.innerHTML = "Dark-theme";
   } else {
-    buttonText[0].innerHTML = "Light-theme";
+    mode.innerHTML = "Light-theme";
   }
+  console.log("hit")
 }
 
+mode.onclick = themeChange;
+
+
+function newNote() {
+  work.classList.toggle("hide")
+}
+
+add.onclick = newNote;
 
 /* function to add a new note */
 /*

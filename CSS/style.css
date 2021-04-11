@@ -32,6 +32,7 @@ a {
 .side {
     grid-area: s;
     background-color: var(--mainColour);
+    min-width: 15%;
 }
 
 .noteList {
@@ -123,7 +124,7 @@ textarea {
     padding-right: 1rem;
 }
 
-.delete {
+.cancel {
     font-size: 1rem;
 }
 
@@ -171,6 +172,10 @@ footer {
   --noteTextColour: #191724;
 }
 
+.hide {
+    height: 0;
+    overflow: hidden;
+}
 @media screen and (max-width: 720px) {
 
     .container {
@@ -206,7 +211,7 @@ footer {
         font-size: 2rem;
     }
 
-    .delete {
+    .cancel {
         font-size: 2rem;
     }
 }
