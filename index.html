@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="JS/app.js"></script>
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Zilla+Slab&display=swap" rel="stylesheet">
     <title>Note-ly</title>
 </head>
-<body>
+<body class="lightMode">
     <div class="container">
         <header>
             <nav>
                 <ul class="top">
+                    <li><button class="button mode" onclick="themeChange()">Dark-theme</button></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Docs</a></li>
                 </ul>

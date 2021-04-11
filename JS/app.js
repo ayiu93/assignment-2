@@ -1,3 +1,14 @@
+function themeChange() {
+	document.body.classList.toggle('darkMode');
+  var buttonText = document.getElementsByClassName("mode");
+  if (buttonText[0].innerHTML === "Light-theme") {
+    buttonText[0].innerHTML = "Dark-theme";
+  } else {
+    buttonText[0].innerHTML = "Light-theme";
+  }
+}
+
+
 /* function to add a new note */
 /*
     - create a new blank note area when ' + ' button is pressed
