@@ -34,9 +34,6 @@ a {
 .side {
     grid-area: s;
     background-color: #393552;
-    display: flex;
-    justify-content: flex-start;
-    
 }
 
 .noteList {
@@ -46,12 +43,17 @@ a {
     top: 0; 
     left: 0;
     background-color: #6e6a86;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 3rem auto;
+    grid-template-columns: auto 3rem;
+    grid-template-areas: 
+    '. c' 
+    'n .';
     opacity: 96%;
 }
 
 ul {
+    grid-area: n;
     display: flex;
     flex-direction: column;
     padding: 2rem;
@@ -77,11 +79,11 @@ li {
 .workspace {
     display: grid;
     grid-template-rows: 2rem auto 2rem;
-    grid-template-columns: 42rem auto;
+    grid-template-columns: 1rem 42rem auto;
     grid-template-areas: 
-    'a' 
-    'n'
-    'b';
+    'a . .' 
+    '. n .'
+    '. b .';
     padding-top: 10%;
 }
 
@@ -126,12 +128,13 @@ textarea {
 }
 
 .close {
-    margin-left: 15rem;
+    grid-area: c;
     color: #191724;
 }
 
 .add {
     grid-area: a;
+    font-size: 3rem;
 }
 
 footer {
