@@ -161,7 +161,7 @@ li {
 }
 
 .open {
-    color: var(--noteTextColour);
+    color: var(--textColour);
 }
 
 .add {

@@ -8,15 +8,14 @@ const close = document.querySelector(".close")
 const open = document.querySelector(".open")
 const noteList = document.querySelector(".noteList");
 
-notesArray = []
-noteCount = 0
+const notesArray = []
 
 mode.onclick = function themeChange() {
 	body.classList.toggle("darkMode");
-  if (mode.innerHTML === "Light-theme") {
-    mode.innerHTML = "Dark-theme";
+  if (mode.textContent === "Light-theme") {
+    mode.textContent = "Dark-theme";
   } else {
-    mode.innerHTML = "Light-theme";
+    mode.textContent = "Light-theme";
   }
 }
 
@@ -40,29 +39,31 @@ function closeNote() {
   cancel.classList.toggle("hide");
 }
 
-closeNote();
-cancel.onclick = closeNote;
-
-save.onclick = function saveNote(noteCount) {
+save.onclick = function saveNote(noteCount, title = null) {
   const note = document.querySelector(".note");
-  const titleText = prompt("Please title your note");
-  if (titleText != null) {
+  let titleText = ''
+  if(title == null) {
+    titleText = prompt("Please title your note");
+  } else {
+    titleText = title;
+  }
+  if (titleText != null && titleText != '') {
     notesArray.push({title: titleText, body: note.value});
     changeNav(titleText, noteCount);
-    noteCount++;
     note.remove();
     save.classList.toggle("hide");
     cancel.classList.toggle("hide");
   }
+  console.log(notesArray);
 }
 
 function changeNav(text, count) {
   const list = document.querySelector(".list");
   const newNote = document.createElement("LI");
-  const newNoteA = document.createElement("A");
+  const newNoteA = document.createElement("BUTTON");
   newNoteA.appendChild(document.createTextNode(text));
-  newNoteA.setAttribute("href", "#");
   newNoteA.title = text;
+  newNoteA.className = "button notes"
   newNote.appendChild(newNoteA)
   list.appendChild(newNote);
 }
@@ -78,6 +79,32 @@ close.onclick = function closeList() {
   close.classList.toggle("hide");
   open.classList.toggle("hide");
 }
+
+
+
+function selectNote() {
+  const note = document.querySelector(".note");
+  if(note && note.value != '') {
+    msg = "Would you like to save current note?" + 
+          " Enter a title and click OK to save, cancel to discard."
+    const titleText = prompt(msg); 
+
+    if (titleText != null && titleText != '') {
+      saveNote(noteCount, titleText);
+      note.remove();
+      //open existing note
+    } else {
+      note.remove();
+      //open existing note
+    }
+  } else {
+    //open existing note
+  }
+}
+
+closeNote();
+cancel.onclick = closeNote;
+document.querySelectorAll(".notes").addEventListener("click", selectNote);
 
 /* function to add a new note */
 /*
