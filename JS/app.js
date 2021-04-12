@@ -41,7 +41,7 @@ function closeNote() {
 
 save.onclick = function saveNote(noteCount, title = null) {
   const note = document.querySelector(".note");
-  const notes = {title: '', body:''}
+  let notes = {title: '', body:''}
   let titleText = ''
   if(title == null) {
     titleText = prompt("Please title your note");
