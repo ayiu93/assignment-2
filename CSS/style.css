@@ -206,11 +206,18 @@ footer {
         display: none;
     }
 
+    .open {
+        display: none;
+    }
+
     .noteList {
+        width: 100%;
+        max-width: 100%;
         height: auto;
         position: relative;
         display: flex;
         opacity: 100%;
+        overflow: scroll;
     }
 
     ul {
