@@ -4,6 +4,9 @@ const add = document.querySelector(".add");
 const work = document.querySelector(".workspace");
 const save = document.querySelector(".save");
 const cancel = document.querySelector(".cancel");
+const close = document.querySelector(".close")
+const open = document.querySelector(".open")
+const noteList = document.querySelector(".noteList");
 
 notesArray = []
 noteCount = 0
@@ -63,6 +66,19 @@ function changeNav(text, count) {
   newNote.appendChild(newNoteA)
   list.appendChild(newNote);
 }
+
+open.onclick = function openList() {
+  noteList.style.width = "auto";
+  close.classList.toggle("hide");
+  open.classList.toggle("hide");
+}
+
+close.onclick = function closeList() {
+  noteList.style.width = "0";
+  close.classList.toggle("hide");
+  open.classList.toggle("hide");
+}
+
 /* function to add a new note */
 /*
     - create a new blank note area when ' + ' button is pressed

@@ -56,7 +56,8 @@ a {
 
 .noteList {
     height: 100%;
-    min-width: 15%;
+    max-width: 50%;
+    width: 0;
     position: fixed; 
     top: 0; 
     left: 0;
@@ -66,8 +67,9 @@ a {
     grid-template-columns: auto 3rem;
     grid-template-areas: 
     '. c' 
-    'n .';
+    'n .'; 
     opacity: 96%;
+    overflow: hidden;
 }
 
 ul {
@@ -155,6 +157,10 @@ li {
 
 .close {
     grid-area: c;
+    color: var(--noteTextColour);
+}
+
+.open {
     color: var(--noteTextColour);
 }
 
