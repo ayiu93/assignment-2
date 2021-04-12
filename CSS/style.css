@@ -3,6 +3,25 @@
     padding: 0;
 }
 
+.lightMode {
+    --headColour: #fffaf3;
+    --mainColour: #f2e9de;
+    --navColour: #9ccfd8;
+    --textColour: #575279;
+    --noteColour: #f6c177;
+    --noteTextColour: #191724;
+    
+}
+  
+.darkMode {
+    --headColour: #2a273f;
+    --mainColour: #393552;
+    --navColour: #6e6a86;
+    --textColour: #e0def4;
+    --noteColour: #f6c177;
+    --noteTextColour: #191724;
+}
+
 .container {
     display: grid;
     grid-template-columns: auto auto;
@@ -94,7 +113,7 @@ li {
     padding-top: 8%;
 }
 
-textarea {
+.note {
     height: 20rem;
     width: 40rem;
     margin-left: 2rem;
@@ -160,29 +179,11 @@ footer {
     padding-right: 2rem;
 }
 
-.lightMode {
-  --headColour: #fffaf3;
-  --mainColour: #f2e9de;
-  --navColour: #9ccfd8;
-  --textColour: #575279;
-  --noteColour: #f6c177;
-  --noteTextColour: #191724;
-  
-}
-
-.darkMode {
-  --headColour: #2a273f;
-  --mainColour: #393552;
-  --navColour: #6e6a86;
-  --textColour: #e0def4;
-  --noteColour: #f6c177;
-  --noteTextColour: #191724;
-}
-
 .hide {
     height: 0;
     overflow: hidden;
 }
+
 @media screen and (max-width: 720px) {
 
     .container {
