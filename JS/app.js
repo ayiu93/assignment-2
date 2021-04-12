@@ -19,38 +19,29 @@ mode.onclick = function themeChange() {
 }
 
 add.onclick = function newNote() {
-  const newWork = document.createElement("TEXTAREA");
-  newWork.className = "note";
-  newWork.placeholder = "your note here";
-  const newSave = document.createElement("BUTTON");
-  newSave.className = "button save";
-  newSave.innerHTML = "save";
-  const newCancel = document.createElement("BUTTON");
-  newCancel.className = "button cancel";
-  newCancel.innerHTML = "cancel";
-  work.append(newWork);
-  bar.append(newSave);
-  bar.append(newCancel);
-  //save.classList.toggle("hide");
-  //cancel.classList.toggle("hide");
-  refresh();
+  const note = document.querySelector(".note")
+  if(!note) {
+    const newWork = document.createElement("TEXTAREA");
+    newWork.className = "note";
+    newWork.setAttribute("id", "text");
+    newWork.placeholder = "your note here";
+    work.append(newWork);
+    save.classList.toggle("hide")
+    cancel.classList.toggle("hide");
+  }
 }
 
-cancel.onclick = function closeNote() {
+function closeNote() {
   const note = document.querySelector(".note");
-  const cancel = document.querySelector(".cancel");
-  const save = document.querySelector(".save");
   note.remove();
-  //
-  //cancel.classList.toggle("hide");
-  save.remove();
-  cancel.remove();
+  save.classList.toggle("hide")
+  cancel.classList.toggle("hide");
 }
 
-function refresh() {
-  const save = document.querySelector(".save");
-  const cancel = document.querySelector(".cancel");
-}
+closeNote();
+cancel.onclick = closeNote;
+
+save.onclick
 /* function to add a new note */
 /*
     - create a new blank note area when ' + ' button is pressed
