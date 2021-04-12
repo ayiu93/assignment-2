@@ -41,7 +41,15 @@ function closeNote() {
 closeNote();
 cancel.onclick = closeNote;
 
-save.onclick
+save.onclick = function saveNote() {
+  const note = document.querySelector(".note");
+  const titleText = prompt("Please name your note");
+  notesArray.push({title: titleText, body: note.value})
+  note.remove();
+  save.classList.toggle("hide")
+  cancel.classList.toggle("hide");
+  console.log(notesArray)
+}
 /* function to add a new note */
 /*
     - create a new blank note area when ' + ' button is pressed
