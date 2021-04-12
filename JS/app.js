@@ -41,6 +41,7 @@ function closeNote() {
 
 save.onclick = function saveNote(noteCount, title = null) {
   const note = document.querySelector(".note");
+  const notes = {title: '', body:''}
   let titleText = ''
   if(title == null) {
     titleText = prompt("Please title your note");
@@ -48,7 +49,7 @@ save.onclick = function saveNote(noteCount, title = null) {
     titleText = title;
   }
   if (titleText != null && titleText != '') {
-    notesArray.push({title: titleText, body: note.value});
+    notesArray.push(notes = {title: titleText, body: note.value});
     changeNav(titleText, noteCount);
     note.remove();
     save.classList.toggle("hide");
@@ -84,33 +85,43 @@ close.onclick = function closeList() {
 
 function selectNote() {
   const note = document.querySelector(".note");
+  //const selection = document ** get text of clicked note button
   if(note && note.value != '') {
     msg = "Would you like to save current note?" + 
           " Enter a title and click OK to save, cancel to discard."
     const titleText = prompt(msg); 
-
     if (titleText != null && titleText != '') {
       saveNote(noteCount, titleText);
       note.remove();
-      //open existing note
+
+      //content = getNote(selection, notesArray)
+      //display content into text area
     } else {
       note.remove();
       //open existing note
+      //display content into text area
     }
   } else {
     //open existing note
+    //display content into text area
   }
+}
+
+function getNote(titleText, notesArray) {
+  let text = titleText;
+  content = '';
+  for(i=0;i<notesArray.length();i++) {
+    if(text = notes.title) {
+      content = notes.body;
+    }
+  }
+  return content;
 }
 
 closeNote();
 cancel.onclick = closeNote;
-document.querySelectorAll(".notes").addEventListener("click", selectNote);
-
-/* function to add a new note */
-/*
-    - create a new blank note area when ' + ' button is pressed
-    - make a way to cancel without saving
-*/
+//document.querySelectorAll(".notes").addEventListener("click", selectNote);
+//^ is this a thing?
 
 
 /* function to select note from side bar*/
@@ -122,14 +133,4 @@ document.querySelectorAll(".notes").addEventListener("click", selectNote);
       button pressed
     - the associated content from note object is displayed in the text area
     - probably have to look that up also
-*/
-
-
-/* function to save note */
-/*
-    - ask for name to save note as, is used as title in note object
-    - note and title saved as note object into note array
-    - close note area maybe??
-    - add new title to side bar
-    - will have to look up the whole updating side bar thing
 */
